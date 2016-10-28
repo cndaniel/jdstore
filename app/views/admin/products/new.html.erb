@@ -1,11 +1,12 @@
 <h2> Add a Product </h2>
 
 
-<%= simple_form_for [:admin, @product] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :quantity %>
-  <%= f.input :price %>
-  <%= f.input :image %>
+<%= form_for [:admin, @product] do |f| %>
+  <%= f.text_area :title %>
+  <%= f.text_area :description %>
+  <%= f.text_area :quantity %>
+  <%= f.text_area :price %>
+
+  <%= f.file_field :pics, multiple: true %>
   <%= f.submit %>
 <% end %>

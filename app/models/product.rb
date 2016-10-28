@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
-  validates :title, presence: true
-  validates :price, presence: true
-  validates :quantity, presence: true
 
-  mount_uploader :image, ImageUploader
+ serialize :pics, Array
+  mount_uploader :pics, PicsUploader
+ 
+
 end

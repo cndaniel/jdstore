@@ -19,7 +19,7 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save
+    if @product.save!
       redirect_to admin_products_path, notice:'Product added sucessfully.'
     else
       render :new
@@ -46,7 +46,7 @@ class Admin::ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image)
+    params.require(:product).permit(:title, :description, :quantity, :price, {pics:[]})
   end
 
 
