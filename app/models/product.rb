@@ -1,7 +1,10 @@
 class Product < ApplicationRecord
 
- serialize :pics, Array
+  attribute :pics, ArrayType.new
   mount_uploader :pics, PicsUploader
- 
+
+  
+
+
 
 end

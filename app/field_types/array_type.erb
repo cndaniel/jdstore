@@ -1,0 +1,5 @@
+class ArrayType < ActiveRecord::Type:Text
+  def type_cast(value)
+    Array.wrap(YMAL::load(value||YAML.dump([])))
+  end
+end
